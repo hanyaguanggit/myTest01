@@ -1,0 +1,425 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E5466EE6-4649-4CA3-AB03-5E7869820B05}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YL.Check</RootNamespace>
+    <AssemblyName>YL.Check</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>F:\ylcheck\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8C7575A6CC64F95F11FFA0E92D60E553DA6C1EF5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>YL.Check_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>YL.Check.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\references\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\..\references\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\..\references\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\references\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Yl.Ticket5.Common40">
+      <HintPath>..\..\references\Yl.Ticket5.Common40.dll</HintPath>
+    </Reference>
+    <Reference Include="Yl.Ticket5.Redis">
+      <HintPath>..\..\references\Yl.Ticket5.Redis.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Devs\DLLHelper.cs" />
+    <Compile Include="Devs\YLdDevIC.cs" />
+    <Compile Include="Devs\YLGateDev.cs" />
+    <Compile Include="Devs\YLIdDev.cs" />
+    <Compile Include="Devs\YLPalmDev.cs" />
+    <Compile Include="Devs\YLScannerDev.cs" />
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FormValueArg.cs" />
+    <Compile Include="Model\IDCardInfoArg.cs" />
+    <Compile Include="Model\IdCardInfoBM.cs" />
+    <Compile Include="Model\MessageWithFailArg.cs" />
+    <Compile Include="Model\MessageWithSuccessArg.cs" />
+    <Compile Include="Model\OrderTypeEnum.cs" />
+    <Compile Include="Panels\BaseFormTypeUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\BaseFormTypeUC.Designer.cs">
+      <DependentUpon>BaseFormTypeUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\CheckErrorSessionUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\CheckErrorSessionUC.Designer.cs">
+      <DependentUpon>CheckErrorSessionUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\CheckFailUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\CheckFailUC.Designer.cs">
+      <DependentUpon>CheckFailUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\CheckSingleRepeatUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\CheckSingleRepeatUC.Designer.cs">
+      <DependentUpon>CheckSingleRepeatUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\CheckSingleSuccessUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\CheckSingleSuccessUC.Designer.cs">
+      <DependentUpon>CheckSingleSuccessUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\CheckTeamRepeatUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\CheckTeamRepeatUC.Designer.cs">
+      <DependentUpon>CheckTeamRepeatUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\CheckTeamSuccessUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\CheckTeamSuccessUC.Designer.cs">
+      <DependentUpon>CheckTeamSuccessUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\DefaultUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\DefaultUC.Designer.cs">
+      <DependentUpon>DefaultUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\DisableUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\DisableUC.Designer.cs">
+      <DependentUpon>DisableUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\MessageWithFailUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\MessageWithFailUC.Designer.cs">
+      <DependentUpon>MessageWithFailUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\MessageWithRepeatUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\MessageWithRepeatUC.Designer.cs">
+      <DependentUpon>MessageWithRepeatUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\MessageWithSuccessUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\MessageWithSuccessUC.Designer.cs">
+      <DependentUpon>MessageWithSuccessUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\OutLineSingleRepeatUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\OutLineSingleRepeatUC.Designer.cs">
+      <DependentUpon>OutLineSingleRepeatUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\OutLineSingleSuccessUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\OutLineSingleSuccessUC.Designer.cs">
+      <DependentUpon>OutLineSingleSuccessUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\OutLineTeamRepeatUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\OutLineTeamRepeatUC.Designer.cs">
+      <DependentUpon>OutLineTeamRepeatUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\OutLineTeamSuccessUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\OutLineTeamSuccessUC.Designer.cs">
+      <DependentUpon>OutLineTeamSuccessUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panels\WorkCardUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panels\WorkCardUC.Designer.cs">
+      <DependentUpon>WorkCardUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\Config.cs" />
+    <Compile Include="Utilities\HttpX.cs" />
+    <Compile Include="Utilities\Logger.cs" />
+    <Compile Include="Utilities\LogicHandle.cs" />
+    <Compile Include="Utilities\SQLiteHelper.cs" />
+    <Compile Include="Utilities\SqlTypeConvertor.cs" />
+    <Compile Include="Utilities\ThreadPlay.cs" />
+    <Compile Include="Utilities\WinAPI.cs" />
+    <Compile Include="Utilities\WindowsFullScreenApi.cs" />
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\BaseFormTypeUC.resx">
+      <DependentUpon>BaseFormTypeUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\CheckErrorSessionUC.resx">
+      <DependentUpon>CheckErrorSessionUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\CheckFailUC.resx">
+      <DependentUpon>CheckFailUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\CheckSingleRepeatUC.resx">
+      <DependentUpon>CheckSingleRepeatUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\CheckSingleSuccessUC.resx">
+      <DependentUpon>CheckSingleSuccessUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\CheckTeamRepeatUC.resx">
+      <DependentUpon>CheckTeamRepeatUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\CheckTeamSuccessUC.resx">
+      <DependentUpon>CheckTeamSuccessUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\DefaultUC.resx">
+      <DependentUpon>DefaultUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\DisableUC.resx">
+      <DependentUpon>DisableUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\MessageWithFailUC.resx">
+      <DependentUpon>MessageWithFailUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\MessageWithRepeatUC.resx">
+      <DependentUpon>MessageWithRepeatUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\MessageWithSuccessUC.resx">
+      <DependentUpon>MessageWithSuccessUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\OutLineSingleRepeatUC.resx">
+      <DependentUpon>OutLineSingleRepeatUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\OutLineSingleSuccessUC.resx">
+      <DependentUpon>OutLineSingleSuccessUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\OutLineTeamRepeatUC.resx">
+      <DependentUpon>OutLineTeamRepeatUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\OutLineTeamSuccessUC.resx">
+      <DependentUpon>OutLineTeamSuccessUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panels\WorkCardUC.resx">
+      <DependentUpon>WorkCardUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DB\checkDB.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_red2.png" />
+    <None Include="Resources\free_02.png" />
+    <Content Include="config.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="logo.ico" />
+    <Content Include="sdtapi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="termb.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="wav\alarm.wav" />
+    <Content Include="wav\invalid.wav" />
+    <Content Include="wav\pass.wav" />
+    <Content Include="wav\student.wav" />
+    <Content Include="wav\team.wav" />
+    <Content Include="wav\wrong.wav" />
+    <Content Include="WLTLib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\backgroud.png" />
+    <Content Include="CVRApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\baojing.jpg" />
+    <Content Include="Resources\bg.jpg" />
+    <Content Include="Resources\bj.png" />
+    <Content Include="Resources\blue.gif" />
+    <Content Include="Resources\CountPerson.png" />
+    <Content Include="Resources\green.gif" />
+    <Content Include="Resources\InPerson.png" />
+    <Content Include="Resources\login_bg.png" />
+    <Content Include="Resources\manualInput_b.jpg" />
+    <Content Include="Resources\manualInput_l.jpg" />
+    <Content Include="Resources\manualInput_lb.jpg" />
+    <Content Include="Resources\manualInput_lt.jpg" />
+    <Content Include="Resources\manualInput_r.jpg" />
+    <Content Include="Resources\manualInput_rb.jpg" />
+    <Content Include="Resources\manualInput_rt.jpg" />
+    <Content Include="Resources\manualInput_t.jpg" />
+    <None Include="Resources\online.png" />
+    <None Include="Resources\outline.png" />
+    <Content Include="Resources\piaowu_01.png" />
+    <Content Include="Resources\piaowu_03.png" />
+    <Content Include="Resources\piaowu_04.png" />
+    <Content Include="Resources\red.gif" />
+    <Content Include="Resources\TopBg.jpg" />
+    <Content Include="Resources\yellow.gif" />
+    <Content Include="Resources\wav\cpyrc.wav" />
+    <Content Include="Resources\wav\ok.wav" />
+    <Content Include="Resources\wav\rqcw.wav" />
+    <Content Include="Resources\wav\tkterr.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Yl.Cg.Model\Yl.Cg.Model.csproj">
+      <Project>{863d49c1-66a2-4e3c-b5a5-e2631040186c}</Project>
+      <Name>Yl.Cg.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

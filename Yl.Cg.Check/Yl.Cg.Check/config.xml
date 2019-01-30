@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Config>
+  <add key="OutLine_CONN" value="Data Source=.\DB\checkDB.db;Version=3;UseUTF16Encoding=True;" />
+  <add key="CHECK_TICKET" value="" />
+  <!-- 离线数据上传起始时间 -->
+  <add key="UPLOAD_TIME" value="15" />
+  <!-- 离线数据上传次数 -->
+  <add key="UPLOAD_COUNT" value="100" />
+  <!-- 免费入馆岁数 -->
+  <add key="FreeAge" value="65" />
+  <!-- 免费入馆对应的权限卡[李玲]信息 -->
+  <add key="FreeQRCode" value="39gb+4M3kb6SJli3tcQTfF3g6dVcYDbg0Z49AYqR#8" />
+</Config>
